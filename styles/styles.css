@@ -1,0 +1,520 @@
+/* Fonts */
+@font-face {
+        font-family: 'Anisette Std ';
+        src: url('/src/fonts/AnisetteStd-Regular.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+}
+@font-face {
+        font-family: 'Anisette Std Bold';
+        src: url('/src/fonts/AnisetteStd-Bold.otf') format('opentype');
+        font-weight: bold;
+        font-style: normal;
+}
+
+@font-face {
+        font-family: "Parisine Office Std";
+        src: url("/src/fonts/ParisineOfficeStd-Regular.otf") format("opentype");
+        font-weight: normal;
+        font-style: normal;
+}
+@font-face {
+        font-family: "Parisine Office Std Bold";
+        src: url("/src/fonts/ParisineOfficeStd-Bold.otf") format("opentype");
+        font-weight: bold;
+        font-style: normal;
+}
+
+/* Vars */
+:root {
+        --quiz-bg-color: #CC533E;
+        --puzzle-bg-color: #0B6971;
+        --main-text-color: #fff;
+        --font-primary: 'Anisette Std Bold', Arial, sans-serif;
+        --font-secondary: 'Parisine Office Std', sans-serif;
+        --text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+
+}
+
+/* Reset */
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+}
+body {
+        overflow: hidden;
+        background:black;
+}
+
+/* Utils */
+.hidden {
+  display: none!important;
+}
+.lignes-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('/src/img/lignes-bg.png') no-repeat center center/cover;
+        pointer-events: none;
+        z-index: -1;
+}
+.shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 4px 250px 0 rgba(5, 19, 29, 0.40) inset;
+        pointer-events: none;
+        z-index: -1;
+}
+.motif-cabane-douanier:before{
+        content: "";
+        position: absolute;
+        z-index: 1;
+        background: url('/src/img/motif-cabane-douanier.png') no-repeat center center/cover;
+        top: 0;
+        width: 30px;
+        height: 100%;
+}
+.motif-cabane-douanier-court:before{
+        content: "";
+        position: absolute;
+        z-index: 1;
+        background: url('/src/img/motif-cabane-douanier-court.png') no-repeat bottom right;
+        bottom: 0;
+        right: 0;
+        width: 80px;
+        height: 60%;
+}
+.btn{
+        font-family: var(--font-secondary);
+        color: #242424;
+        text-transform:  uppercase;
+        font-size: 32px;
+        padding: 20px 64px 24px;
+        border-radius: 8px;
+        border: none;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.70) 0%, rgba(203, 193, 186, 0.70) 100%), #FFF;
+        box-shadow: 0 4px 4px 0 rgba(3, 12, 20, 0.15);
+        backdrop-filter: blur(5px);
+}
+.btn.success{
+        background: #0B6971;
+        color: white;
+}
+.btn.failure{
+        background: #A31F24;
+        color: white;
+}
+.btn a {
+        text-decoration: none;
+        color: inherit;
+}
+.title{
+        font-family: var(--font-primary);
+        text-shadow: var(--text-shadow);
+        font-size: 56px;
+}
+#dark-overlay {
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-color: black;
+        z-index: 10000;
+}
+.texture {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        mix-blend-mode: hard-light;
+        opacity: 0.2;
+        pointer-events: none;
+}
+.texture-fumé {
+        background-image: url('/src/img/texture-fumé.jpg');
+}
+.texture-papier {
+        background-image: url('/src/img/texture-papier.jpg');
+}
+
+/* Home */
+#home main {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: #242424;
+}
+#home .motif-cabane-douanier:before{
+        background: url('/src/img/motif-cabane-douanier-court.png') no-repeat top left;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 60%;
+}
+#home .shadow,
+#home .lignes-bg {
+        z-index: 0;
+}
+#home main .home-section .home-btn {
+        position: absolute;
+        font-family: var(--font-primary);
+        font-size: 106px;
+        color: var(--main-text-color)!important;
+        text-decoration: none;
+        z-index: 1;
+}
+#home main .home-section img {
+        position: absolute;
+        height: 100vh;
+}
+#home main .home-section.clicked img {
+        filter: brightness(0.6);
+        transition: filter 0.3s;
+}
+#home main .quiz-section img {
+        left: 0;
+}
+#home main .puzzle-section img {
+        right: 0;
+}
+#home main .quiz-section .home-btn {
+        bottom: 20px;
+        left: 80px;
+}
+#home main .puzzle-section .home-btn {
+        right: 80px;
+        top: 20px;
+}
+#home main .middle-line {
+        position: absolute;
+        height: 100vh;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+}
+
+/* Puzzle */
+
+#puzzle {
+        width: 100vw;
+        height: 100vh;
+        color: var(--main-text-color);
+        background-color: var(--puzzle-bg-color);
+}
+
+#puzzle h1 {
+        position: absolute;
+        top: 40px;
+        right: 90px;
+        font-family: var(--font-primary);
+        font-size: 104px;
+}
+
+#puzzle #go-to-quiz-btn {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin-left: -16px;
+        margin-bottom: -20px;
+}
+#puzzle #go-to-quiz-btn div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        margin-top: 15px;
+        font-family: var(--font-primary);
+        font-size: 40px;
+}
+
+#puzzle main {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+        height: 100vh;
+}
+
+#puzzle main #puzzle-selector {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+}
+#puzzle main #puzzle-selector .puzzles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 1fr;
+        gap: 24px;
+}
+#puzzle main #puzzle-selector .puzzles .puzzle-btn {
+        border-radius: 4px;
+        border: 2px solid #FFF;
+        width: 392px;
+        height: 267px;
+        padding: 0;
+}
+#puzzle main #puzzle-selector .puzzles img{
+        object-fit:  cover;
+        object-position: center;
+        border-radius: 1px;
+        width: 100%;
+        height: 100%;
+}
+
+#puzzle #puzzle-container {
+        position: relative;
+        overflow: hidden;
+}
+
+#puzzle #puzzle-container #puzzle-overlay {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: grid;
+        place-items: center;
+        z-index: 10;
+        transition: opacity 1s;
+}
+
+#puzzle #puzzle-container #puzzle-overlay img,
+#puzzle #puzzle-container #puzzle-overlay p {
+        grid-area: 1 / 1;
+}
+
+#puzzle #puzzle-container #puzzle-overlay img {
+        width: 100%;
+        height: 100%;;
+}
+
+#puzzle #puzzle-container #puzzle-overlay p {
+        position: relative;
+        z-index: 1;
+        color: #242424;
+        font-size: 30px;
+        font-family: Montserrat, sans-serif;
+        font-weight: bold;
+        text-align: center;
+        padding: 24px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 4px 4px 0 rgba(3, 12, 20, 0.15);
+        backdrop-filter: blur(5px);
+}
+
+#puzzle #change-puzzle {
+        position: absolute;
+        bottom: 50px;
+}
+
+#puzzle #puzzle-overlay {
+        background: #fff;
+        border-radius: 4px;
+        opacity: 0.8;
+        backdrop-filter: blur(5px);
+        font-size: 28px;
+        font-family:  var(--font-secondary);
+        color: #242424;
+}
+
+
+/* Quiz */
+#quiz {
+        width: 100vw;
+        height: 100vh;
+        color: var(--main-text-color);
+        background-color: var(--quiz-bg-color);
+}
+
+#quiz h1 {
+        position: absolute;
+        bottom: 40px;
+        left: 90px;
+        font-family: var(--font-primary);
+        font-size: 104px;
+}
+
+#quiz #go-to-puzzle-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: -16px;
+        margin-top: -20px;
+}
+#quiz #go-to-puzzle-btn div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        margin-top: -11px;
+        font-family: var(--font-primary);
+        font-size: 40px;
+}
+
+#quiz main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+}
+
+#quiz #level-selector {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+}
+#quiz #level-selector .levels{
+        display: flex;
+        gap: 24px;
+}
+
+#quiz #question-container{
+        display: flex;
+        align-items: center;
+        gap: 48px;
+        flex-direction:  column;
+}
+#quiz #question-container .question{
+        max-width: 75%;
+        text-wrap: wrap;
+}
+#quiz #question-container .answers{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+}
+#quiz #question-container .answers .answer-btn{
+        padding: 20px 40px 24px;
+        text-align: left;
+}
+#quiz #question-container .submit-btn{
+        margin-top: 16px;
+        padding: 12px 40px 16px 40px;
+}
+
+#quiz #end-screen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+}
+#quiz #end-screen .score {
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+}
+#quiz #end-screen .score .circle {
+        display: flex;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: white;
+        font-family: var(--font-primary);
+        text-shadow:  var(--text-shadow);
+        box-shadow: 0 4px 4px rgba(3, 12, 20, 0.15);
+}
+#quiz #end-screen .score .score-value {
+        position: relative;
+        align-items: end;
+        font-size: 200px;
+        height: 309px;
+        width: 309px;
+        z-index: 1;
+}
+#quiz #end-screen .score .score-value.success{
+        color: #0B6971;
+}
+#quiz #end-screen .score .score-value.failure{
+        color: #A31F24;
+}
+#quiz #end-screen .score  .score-value .antislash {
+        position: absolute;
+        bottom: 47px;
+        right: 4px;
+        font-size: 60px;
+        color: #242424;
+        text-shadow: none;
+}
+#quiz #end-screen .score .num-questions {
+        align-items: center;
+        font-size: 46px;
+        font-family: var(--font-primary);
+        text-shadow:  var(--text-shadow);
+        color: #242424;
+        height: 157px;
+        width: 157px;
+        transform: translateX(-50px);
+}
+#quiz #end-screen .result-text{
+        padding: 20px 40px 24px 40px;
+        border-radius: 4px;
+        background-color: #fff;
+        box-shadow: 0 4px 4px 0 rgba(3, 12, 20, 0.15);
+        backdrop-filter: blur(4px);
+        text-align: center;
+        font-size: 28px;
+        font-family:  var(--font-secondary);
+        color: #242424;
+}
+
+/* Modal */
+#overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+}
+
+.modal {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1000px;
+        padding: 40px;
+        border-radius: 8px;
+        background: #FFFFFFCC;
+        box-shadow: 0 4px 4px 0 rgba(3, 12, 20, 0.15);
+        backdrop-filter: blur(5px);
+        z-index: 1000;
+}
+.modal .modal-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        color: #242424;
+        text-align: center;
+        font-family:  var(--font-secondary);
+        font-size: 40px;
+}
+.modal .modal-content .btns {
+        display: flex;
+        gap: 40px;
+        width: 100%;
+}
+.modal .modal-content .btns .btn {
+        width: 100%;
+        text-transform: uppercase;
+}

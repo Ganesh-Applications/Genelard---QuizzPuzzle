@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+        <meta charset="UTF-8">
+        <title>Quiz</title>
+        <link rel="stylesheet" href="/styles/styles.css">
+        <script src="/src/lib/jquery-3.7.1.min.js"></script>
+        <script src="/script/data.js"></script>
+        <script src="/script/quiz.js" defer></script>
+</head>
+<body id="quiz" class="motif-cabane-douanier">
+        <div id="go-to-puzzle-btn">
+                <img src="/src/img/design-btn-green.png" alt="">
+                <div>Puzzle</div>
+        </div>
+
+        <h1>Quiz</h1>
+
+        <main>
+                <div id="level-selector">
+                        <div class="title">Sélectionnez le niveau de difficulté</div>
+                        <div class="levels">
+                                <button class="btn level-btn" data-level="enfant">Enfant</button>
+                                <button class="btn level-btn" data-level="adulte">Adulte</button>
+                        </div>
+                </div>
+
+                <div id="question-container"
+                     class="hidden"
+                     data-question-index="1"
+                >
+                        <div class="question title"></div>
+                        <div class="answers">
+                        </div>
+<!--                        <button class="btn submit-btn">Valider</button>-->
+                </div>
+
+                <div id="end-screen" class="hidden">
+                        <div class="title">Votre score final est</div>
+                        <div class="score">
+                                <div class="score-value circle"></div>
+                                <div class="num-questions circle"></div>
+                        </div>
+                        <div class="result-text"></div>
+                        <button class="btn">
+                                <a href="/index.html">Retourner au menu</a>
+                        </button>
+                </div>
+        </main>
+
+        <div class="shadow"></div>
+        <div class="lignes-bg"></div>
+        <div class="texture texture-fumé"></div>
+        <div class="texture texture-papier"></div>
+
+        <!--Modal-->
+        <div id="overlay"></div>
+        <div id="quit-modal" class="modal">
+                <div class="modal-content">
+                        <p>Êtes-vous sûr de vouloir quitter le quiz ? Votre progression sera perdue.</p>
+                        <div class="btns">
+                                <button class="confirm-quit btn failure">Oui, quitter</button>
+                                <button class="cancel-quit btn success">Non, rester</button>
+                        </div>
+                </div>
+        </div>
+        <div id="dark-overlay"></div>
+</body>
+</html>
