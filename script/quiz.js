@@ -133,7 +133,7 @@ function endQuiz()
 
         $("#end-screen .result-text").html(text);
 
-        setTimeout(() => location.href = "/index.html", 10000); //<- On quitte le quiz après 10 secondes
+        setTimeout(() => location.href = "index.html", 10000); //<- On quitte le quiz après 10 secondes
 }
 
 function onClickGoToPuzzle()
@@ -167,6 +167,6 @@ function goToPuzzle()
 {
         $('#overlay').fadeIn(1000);
         setTimeout(() => {
-            window.location.href = "/html/puzzle.html";
+            window.location.href = "puzzle.html";
         }, 1200);
 }

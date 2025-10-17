@@ -32,9 +32,9 @@ function startPuzzle(selectedPuzzleId)
         puzzleContainer.removeClass("hidden");
 
         let img = new Image();
-        img.src = '/src/img/puzzle/' + selectedPuzzleId + '.jpg';
+        img.src = 'src/img/puzzle/' + selectedPuzzleId + '.jpg';
 
-        let audio = new Audio('/src/audio/connect.wav');
+        let audio = new Audio('src/audio/connect.wav');
 
         img.onload = () => {
 
@@ -167,7 +167,7 @@ function endPuzzle()
 
         }, 1000);
 
-        setTimeout(() => location.href = "/index.html", 10000); //<- On quitte le puzzle après 10 secondes
+        setTimeout(() => location.href = "index.html", 10000); //<- On quitte le puzzle après 10 secondes
 }
 
 function changePuzzle()
@@ -249,6 +249,6 @@ function goToQuiz()
 {
         $('#dark-overlay').fadeIn(1000);
         setTimeout(() => {
-            window.location.href = "/html/quiz.html";
+            window.location.href = "quiz.html";
         }, 1200)
 }

@@ -13,6 +13,6 @@ function onClickHomeSection()
         $('#dark-overlay').fadeIn(1200);
 
         setTimeout(function() {
-                window.location.href = `/html/${target}.html`;
+                window.location.href = `${target}.html`;
         }, 1600);
 }

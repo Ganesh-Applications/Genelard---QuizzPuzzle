@@ -1,26 +1,26 @@
 /* Fonts */
 @font-face {
         font-family: 'Anisette Std ';
-        src: url('/src/fonts/AnisetteStd-Regular.otf') format('opentype');
+        src: url('src/fonts/AnisetteStd-Regular.otf') format('opentype');
         font-weight: normal;
         font-style: normal;
 }
 @font-face {
         font-family: 'Anisette Std Bold';
-        src: url('/src/fonts/AnisetteStd-Bold.otf') format('opentype');
+        src: url('src/fonts/AnisetteStd-Bold.otf') format('opentype');
         font-weight: bold;
         font-style: normal;
 }
 
 @font-face {
         font-family: "Parisine Office Std";
-        src: url("/src/fonts/ParisineOfficeStd-Regular.otf") format("opentype");
+        src: url("src/fonts/ParisineOfficeStd-Regular.otf") format("opentype");
         font-weight: normal;
         font-style: normal;
 }
 @font-face {
         font-family: "Parisine Office Std Bold";
-        src: url("/src/fonts/ParisineOfficeStd-Bold.otf") format("opentype");
+        src: url("src/fonts/ParisineOfficeStd-Bold.otf") format("opentype");
         font-weight: bold;
         font-style: normal;
 }
@@ -57,7 +57,7 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
-        background: url('/src/img/lignes-bg.png') no-repeat center center/cover;
+        background: url('src/img/lignes-bg.png') no-repeat center center/cover;
         pointer-events: none;
         z-index: -1;
 }
@@ -75,7 +75,7 @@ body {
         content: "";
         position: absolute;
         z-index: 1;
-        background: url('/src/img/motif-cabane-douanier.png') no-repeat center center/cover;
+        background: url('src/img/motif-cabane-douanier.png') no-repeat center center/cover;
         top: 0;
         width: 30px;
         height: 100%;
@@ -84,7 +84,7 @@ body {
         content: "";
         position: absolute;
         z-index: 1;
-        background: url('/src/img/motif-cabane-douanier-court.png') no-repeat bottom right;
+        background: url('src/img/motif-cabane-douanier-court.png') no-repeat bottom right;
         bottom: 0;
         right: 0;
         width: 80px;
@@ -142,10 +142,10 @@ body {
         pointer-events: none;
 }
 .texture-fumé {
-        background-image: url('/src/img/texture-fumé.jpg');
+        background-image: url('src/img/texture-fumé.jpg');
 }
 .texture-papier {
-        background-image: url('/src/img/texture-papier.jpg');
+        background-image: url('src/img/texture-papier.jpg');
 }
 
 /* Home */
@@ -157,7 +157,7 @@ body {
         background-color: #242424;
 }
 #home .motif-cabane-douanier:before{
-        background: url('/src/img/motif-cabane-douanier-court.png') no-repeat top left;
+        background: url('src/img/motif-cabane-douanier-court.png') no-repeat top left;
         bottom: 0;
         left: 0;
         width: 80px;
