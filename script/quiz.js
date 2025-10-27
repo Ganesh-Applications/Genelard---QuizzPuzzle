@@ -19,10 +19,16 @@ function onSelectLevel()
         selectedQuiz = Quiz.find(q => q.level === selectedLevel);
 
         numQuestions = selectedQuiz.questions.length
+        
+        $('#dark-overlay').fadeIn(1000);
 
-        $("#level-selector").addClass("hidden");
-
-        startQuiz();
+        setTimeout(function()
+        {
+            $("#level-selector").addClass("hidden");
+        
+            $('#dark-overlay').fadeOut(1000);
+            startQuiz();
+        }, 1000);
 }
 
 function startQuiz()
@@ -44,8 +50,10 @@ function showNextQuestion()
         let nextQuestion = selectedQuiz.questions[currentQuestionIndex];
 
         //-- Affiche la question
-        let title = currentQuestionIndex + 1 + ". " + nextQuestion.title;
-        questionContainer.find('.title').text(title);
+        let title = '<div class="question-num">' + (currentQuestionIndex + 1) + "/" + numQuestions + "</div>" 
+                        + nextQuestion.title;
+        questionContainer.find('.title').html(title);
+        
         questionContainer.find('.answers').empty();
 
         //-- Pour chaque réponse, crée un bouton
@@ -61,6 +69,13 @@ function showNextQuestion()
 
                 questionContainer.find('.answers').append(answerBtn);
         }
+        
+        questionContainer
+                // hack pour qu'il prenne bien le display flex lors du fadeIn()
+                // @see https://stackoverflow.com/questions/28904698/how-fade-in-a-flex-box
+                .css("display", "flex") 
+                .hide()
+                .fadeIn(600);
 }
 
 function onClickAnswer()
@@ -72,39 +87,55 @@ function onClickAnswer()
         let answerButtons =$(".answers .answer-btn")
         answerButtons.off("click touch");
         answerButtons.addClass("unclickable");
-
-        //-- Si la réponse est juste
-        if (isCorrect)
-        {
-                console.log("Bonne réponse !");
-
-                //-- Affiche la bonne réponse en vert
-                selectedAnswerElt.addClass("success");
-
-                //-- Incrémente le score
-                score++;
-        }
-        //-- Si la réponse est fausse
-        else
-        {
-                console.log("Mauvaise réponse !");
-
-                //-- Affiche la bonne réponse en vert et la mauvaise en rouge
-                selectedAnswerElt.addClass("failure");
-                $(this).parent().find(".correct-answer").addClass("success");
-        }
-
-        //-- Attend avant de passer à la suite
+        
+        selectedAnswerElt.addClass('active');
+        
         setTimeout(function()
+        {
+                selectedAnswerElt.removeClass('active');
+                
+                let nextQuestionDelay;
+                
+                //-- Si la réponse est juste
+                if (isCorrect)
                 {
-                        //-- Si il y a une question suivant on l'affiche
-                        if (currentQuestionIndex < numQuestions - 1)
-                                showNextQuestion();
-                        //-- Sinon on pass à la fin du quiz
-                        else
-                                endQuiz();
+                        console.log("Bonne réponse !");
+
+                        //-- Affiche la bonne réponse en vert
+                        selectedAnswerElt.addClass("success");
+
+                        //-- Incrémente le score
+                        score++;
+                        
+                        nextQuestionDelay = 1500;
                 }
-        , 1500);
+                //-- Si la réponse est fausse
+                else
+                {
+                        console.log("Mauvaise réponse !");
+
+                        //-- Affiche la bonne réponse en vert et la mauvaise en rouge
+                        selectedAnswerElt.addClass("failure");
+                        selectedAnswerElt.parent().find(".correct-answer").addClass("success");
+                        
+                        nextQuestionDelay = 2500;
+                }
+                
+                //-- Attend avant de passer à la suite
+                setTimeout(function()
+                        {
+                                questionContainer.fadeOut(600, function()
+                                {
+                                    //-- Si il y a une question suivant on l'affiche
+                                    if (currentQuestionIndex < numQuestions - 1)
+                                            showNextQuestion();
+                                    //-- Sinon on pass à la fin du quiz
+                                    else
+                                            endQuiz();
+                                });
+                        }
+                , nextQuestionDelay);
+        }, 1000);
 }
 
 function endQuiz()
@@ -112,7 +143,11 @@ function endQuiz()
         console.log("Fin du quiz !");
 
         questionContainer.addClass("hidden");
-        $("#end-screen").removeClass("hidden");
+        
+        $("#end-screen")
+            .removeClass("hidden")
+            .css('display', 'flex').hide()
+            .fadeIn(1000);
 
         let isSuccess = score >= numQuestions/2;
 

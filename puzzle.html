@@ -9,71 +9,73 @@
         <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body id="puzzle" class="motif-cabane-douanier-court">
-        <h1>Puzzle</h1>
+        <div id="app">
+            <h1>Puzzle</h1>
 
-        <main>
-                <div id="puzzle-selector">
-                        <div class="title">Sélectionnez votre puzzle</div>
-                        <div class="puzzles">
-                                <div class="puzzle-btn" data-puzzle-id="avion">
-                                        <img src="src/img/puzzle/avion.jpg">
-                                </div>
-                                <div class="puzzle-btn" data-puzzle-id="chaussures">
-                                        <img src="src/img/puzzle/chaussures.jpg">
-                                </div>
-                                <div class="puzzle-btn" data-puzzle-id="ferme">
-                                        <img src="src/img/puzzle/ferme.jpg">
-                                </div>
-                                <div class="puzzle-btn" data-puzzle-id="liberation">
-                                        <img src="src/img/puzzle/liberation.jpg">
-                                </div>
-                                <div class="puzzle-btn" data-puzzle-id="place_eglise">
-                                        <img src="src/img/puzzle/place_eglise.jpg">
-                                </div>
-                                <div class="puzzle-btn" data-puzzle-id="soldat_allemand">
-                                        <img src="src/img/puzzle/soldat_allemand.jpg">
-                                </div>
-                        </div>
-                </div>
+            <main>
+                    <div id="puzzle-selector">
+                            <div class="title">Sélectionnez votre puzzle</div>
+                            <div class="puzzles">
+                                    <div class="puzzle-btn" data-puzzle-id="avion">
+                                            <img src="src/img/puzzle/avion.jpg">
+                                    </div>
+                                    <div class="puzzle-btn" data-puzzle-id="chaussures">
+                                            <img src="src/img/puzzle/chaussures.jpg">
+                                    </div>
+                                    <div class="puzzle-btn" data-puzzle-id="ferme">
+                                            <img src="src/img/puzzle/ferme.jpg">
+                                    </div>
+                                    <div class="puzzle-btn" data-puzzle-id="liberation">
+                                            <img src="src/img/puzzle/liberation.jpg">
+                                    </div>
+                                    <div class="puzzle-btn" data-puzzle-id="place_eglise">
+                                            <img src="src/img/puzzle/place_eglise.jpg">
+                                    </div>
+                                    <div class="puzzle-btn" data-puzzle-id="soldat_allemand">
+                                            <img src="src/img/puzzle/soldat_allemand.jpg">
+                                    </div>
+                            </div>
+                    </div>
 
-                <div id="puzzle-container"
-                     class="hidden"
-                >
-                        <div id="canvas"></div>
-                        <div id="puzzle-overlay" class="hidden" >
-                                <img src="" alt="">
-                                <p>
-                                        Félicitations !
-                                        </br>
-                                        Vous avez terminé le puzzle en <span class="time"></span>.
-                                </p>
-                        </div>
-                </div>
+                    <div id="puzzle-container"
+                         class="hidden"
+                    >
+                            <div id="canvas"></div>
+                            <div id="puzzle-overlay" class="hidden" >
+                                    <img src="" alt="">
+                                    <p>
+                                            Félicitations !
+                                            </br>
+                                            Vous avez terminé le puzzle en <span class="time"></span>.
+                                    </p>
+                            </div>
+                    </div>
 
-                <div id="change-puzzle" class="btn hidden">Changer de puzzle</div>
+                    <div id="change-puzzle" class="btn hidden">Changer de puzzle</div>
 
-                <div id="go-to-quiz-btn">
-                        <img src="src/img/design-btn-orange.png" alt="">
-                        <div>Quiz</div>
-                </div>
-        </main>
+                    <div id="go-to-quiz-btn">
+                            <img src="src/img/design-btn-orange.png" alt="">
+                            <div>Quiz</div>
+                    </div>
+            </main>
 
-        <div class="shadow"></div>
-        <div class="lignes-bg"></div>
-        <div class="texture texture-fumé"></div>
-        <div class="texture texture-papier"></div>
+            <div class="shadow"></div>
+            <div class="lignes-bg"></div>
+            <div class="texture texture-fumé"></div>
+            <div class="texture texture-papier"></div>
 
-        <!--Modal-->
-        <div id="overlay"></div>
-        <div id="quit-modal" class="modal">
-                <div class="modal-content">
-                        <p>Êtes-vous sûr de vouloir quitter le puzzle ? Votre progression sera perdue.</p>
-                        <div class="btns">
-                                <button class="confirm-quit btn failure">Oui, quitter</button>
-                                <button class="cancel-quit btn success">Non, rester</button>
-                        </div>
-                </div>
+            <!--Modal-->
+            <div id="overlay"></div>
+            <div id="quit-modal" class="modal">
+                    <div class="modal-content">
+                            <p>Êtes-vous sûr de vouloir quitter le puzzle ? Votre progression sera perdue.</p>
+                            <div class="btns">
+                                    <button class="confirm-quit btn failure">Oui, quitter</button>
+                                    <button class="cancel-quit btn success">Non, rester</button>
+                            </div>
+                    </div>
+            </div>
+            <div id="dark-overlay"></div>
         </div>
-        <div id="dark-overlay"></div>
 </body>
 </html>

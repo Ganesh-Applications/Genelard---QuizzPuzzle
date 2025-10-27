@@ -3,7 +3,7 @@ let Quiz = [
                 "level": "enfant",
                 "questions": [
                         {
-                                "title": "Qu'est-ce que la ligne de démarcation ?",
+                                "title": "Qu'est-ce que la ligne de démarcation&nbsp;?",
                                 "answers": {
                                         "1": "Un péage",
                                         "2": "Une ligne qui séparait la France pendant la guerre",
@@ -12,7 +12,7 @@ let Quiz = [
                                 "correct": "2"
                         },
                         {
-                                "title": "Quand la ligne de démarcation a-t-elle été créée ?",
+                                "title": "Quand la ligne de démarcation a-t-elle été créée&nbsp;?",
                                 "answers": {
                                         "1": "En 1940",
                                         "2": "En 1942",
@@ -21,7 +21,7 @@ let Quiz = [
                                 "correct": "1"
                         },
                         {
-                                "title": "Comment la vie des gens a-t-elle changé à cause de cette ligne ?",
+                                "title": "Comment la vie des gens a-t-elle changé à cause de cette ligne&nbsp;?",
                                 "answers": {
                                         "1": "Ils pouvaient voyager gratuitement",
                                         "2": "Ils ne pouvaient plus circuler librement",
@@ -30,7 +30,7 @@ let Quiz = [
                                 "correct": "2"
                         },
                         {
-                                "title": "Que veut dire « clandestin » ?",
+                                "title": "Que veut dire « clandestin »&nbsp;?",
                                 "answers": {
                                         "1": "Un événement annoncé",
                                         "2": "Une activité secrète",
@@ -39,7 +39,7 @@ let Quiz = [
                                 "correct": "2"
                         },
                         {
-                                "title": "Que fait un passeur ?",
+                                "title": "Que fait un passeur&nbsp;?",
                                 "answers": {
                                         "1": "Il/Elle renseigne les gens sur les endroits à visiter",
                                         "2": "Il/Elle transporte des personnes d’un endroit à l’autre souvent de manière illégale",
@@ -48,7 +48,7 @@ let Quiz = [
                                 "correct": "2"
                         },
                         {
-                                "title": "Quand la ligne de démarcation a-t-elle été enlevée ?",
+                                "title": "Quand la ligne de démarcation a-t-elle été enlevée&nbsp;?",
                                 "answers": {
                                         "1": "le 6 juin 1944",
                                         "2": "le 11 novembre 1941",
@@ -62,7 +62,7 @@ let Quiz = [
                 "level": "adulte",
                 "questions": [
                         {
-                                "title": "Quand la ligne de démarcation a-t-elle été mise en place en France?",
+                                "title": "Quand la ligne de démarcation a-t-elle été mise en place en France&nbsp;?",
                                 "answers": {
                                         "1": "En 1940",
                                         "2": "En 1941",
@@ -71,7 +71,7 @@ let Quiz = [
                                 "correct": "1"
                         },
                         {
-                                "title": "Comment est matérialisée la ligne de démarcation ?",
+                                "title": "Comment est matérialisée la ligne de démarcation&nbsp;?",
                                 "answers": {
                                         "1": "Par des murs en béton",
                                         "2": "Par des poteaux et des fils de fer barbelés",
@@ -80,7 +80,7 @@ let Quiz = [
                                 "correct": "2"
                         },
                         {
-                                "title": "Qui surveille la ligne de démarcation du côté de Vichy ?",
+                                "title": "Qui surveille la ligne de démarcation du côté de Vichy&nbsp;?",
                                 "answers": {
                                         "1": "Des soldats de la Wehrmacht uniquement",
                                         "2": "Une combinaison de soldats, gendarmes, policiers et douaniers",
@@ -89,7 +89,7 @@ let Quiz = [
                                 "correct": "2"
                         },
                         {
-                                "title": "Pourquoi l’Allemagne envahit-elle la zone sud ?",
+                                "title": "Pourquoi l’Allemagne envahit-elle la zone sud&nbsp;?",
                                 "answers": {
                                         "1": "Car les Alliés ont débarqué en Normandie",
                                         "2": "Car les Alliés ont débarqué en Afrique du Nord",
@@ -98,7 +98,7 @@ let Quiz = [
                                 "correct": "2"
                         },
                         {
-                                "title": "Quel type d'engagement peut représenter le fait d'aider quelqu'un à passer la ligne ?",
+                                "title": "Quel type d'engagement peut représenter le fait d'aider quelqu'un à passer la ligne&nbsp;?",
                                 "answers": {
                                         "1": "Un engagement militaire",
                                         "2": "Un acte de solidarité",
@@ -107,7 +107,7 @@ let Quiz = [
                                 "correct": "2"
                         },
                         {
-                                "title": "A quelle date la ligne de démarcation n’est plus en fonction ?",
+                                "title": "A quelle date la ligne de démarcation n’est plus en fonction&nbsp;?",
                                 "answers": {
                                         "1": "6 juin 1944",
                                         "2": "11 novembre 1941",
