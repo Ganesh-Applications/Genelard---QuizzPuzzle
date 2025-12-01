@@ -58,8 +58,8 @@ function startPuzzle(selectedPuzzleId)
                 //-- Actuellement les images doivent faire la taille désirée du puzzle -300 en largeur et hauteur (pour laisser de la marge)
 
                 const canvas = new headbreaker.Canvas('canvas', {
-                        width: 1600 ,//img.width + 800,
-                        height: 900 ,//img.height + 600,
+                        width: 1400,
+                        height: 900,
                         proximity: 40,
                         pieceSize,
                         strokeWidth: 3,
