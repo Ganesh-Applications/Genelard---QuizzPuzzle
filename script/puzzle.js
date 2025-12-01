@@ -200,8 +200,6 @@ function onClickGoToQuiz()
         let modal = $("#quit-modal");
         let overlay = $("#overlay");
 
-        // modal.removeClass("hidden");
-        // overlay.removeClass("hidden");
         modal.fadeIn(300);
         overlay.fadeIn(300);
 
@@ -230,16 +228,16 @@ function onClickChangePuzzle()
         let modal = $("#quit-modal");
         let overlay = $("#overlay");
 
-        modal.removeClass("hidden");
-        overlay.removeClass("hidden");
+        modal.fadeIn(300);
+        overlay.fadeIn(300);
 
         modal.find(".cancel-quit").on("click touch", function() {
-                modal.addClass("hidden");
-                overlay.addClass("hidden");
+                modal.fadeOut(300);
+                overlay.fadeOut(300);
         });
         modal.find(".confirm-quit").on("click touch", () => {
-                modal.addClass("hidden");
-                overlay.addClass("hidden");
+                modal.fadeOut(300);
+                overlay.fadeOut(300);
                 changePuzzle()
         });
 
