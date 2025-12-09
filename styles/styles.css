@@ -251,7 +251,7 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-        margin-top: 15px;
+        margin-top: 10px;
         font-family: var(--font-primary);
         font-size: 40px;
 }
@@ -383,7 +383,7 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-        margin-top: -11px;
+        margin-top: -15px;
         font-family: var(--font-primary);
         font-size: 40px;
 }
@@ -462,6 +462,7 @@ body {
         font-size: 200px;
         height: 309px;
         width: 309px;
+        line-height: 1.65;
         z-index: 1;
 }
 #quiz #end-screen .score .score-value.success{
@@ -480,7 +481,7 @@ body {
 }
 #quiz #end-screen .score .num-questions {
         align-items: center;
-        font-size: 46px;
+        font-size: 68px;
         font-family: var(--font-primary);
         text-shadow:  var(--text-shadow);
         color: #242424;
