@@ -153,11 +153,7 @@ function endPuzzle()
 
         setTimeout(() => {
                 puzzleOverlay.find('img')
-                        .attr('src', img.src)
-
-                puzzleOverlay
-                        .width(canvas.width)
-                        .height(canvas.height);
+                        .attr('src', img.src);
 
                 puzzleOverlay
                         .removeClass('hidden')

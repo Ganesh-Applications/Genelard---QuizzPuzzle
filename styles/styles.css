@@ -297,7 +297,7 @@ body {
         overflow: hidden;
 }
 
-#puzzle #puzzle-container #puzzle-overlay {
+#puzzle #puzzle-overlay {
         opacity: 0;
         position: absolute;
         top: 0;
@@ -306,19 +306,24 @@ body {
         place-items: center;
         z-index: 10;
         transition: opacity 1s;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(#042c2f, #26262670)
 }
 
-#puzzle #puzzle-container #puzzle-overlay img,
-#puzzle #puzzle-container #puzzle-overlay p {
+#puzzle #puzzle-overlay img,
+#puzzle #puzzle-overlay p {
         grid-area: 1 / 1;
 }
 
-#puzzle #puzzle-container #puzzle-overlay img {
-        width: 100%;
-        height: 100%;;
+#puzzle #puzzle-overlay img {
+        max-width: 1400px;
+        max-height: 900px;
+        width: auto;
+        box-shadow: 0 0 25px 0px #032023;
 }
 
-#puzzle #puzzle-container #puzzle-overlay p {
+#puzzle #puzzle-overlay p {
         position: relative;
         z-index: 1;
         color: #242424;
@@ -338,7 +343,7 @@ body {
         bottom: 50px;
 }
 
-#puzzle #puzzle-overlay {
+#puzzle #puzzle-overlay p {
         background: #fff;
         border-radius: 4px;
         opacity: 0.8;
