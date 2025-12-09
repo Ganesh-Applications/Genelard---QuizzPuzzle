@@ -1,3 +1,14 @@
+const IDLE_TIME_LIMIT = 5 * 60 * 1000; // 5 minutes
+let idleTimeout = null;
+
+$(document).on('click', function(){
+     clearTimeout(idleTimeout);
+     idleTimeout = setTimeout(function()
+     {
+             document.location.reload();
+     }, IDLE_TIME_LIMIT);
+});
+
 let selectedQuiz = null;
 let currentQuestionIndex = -1;
 let numQuestions = null;
